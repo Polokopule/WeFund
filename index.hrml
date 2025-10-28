@@ -2,31 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Broker Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-body { font-family: Arial; padding: 20px; }
-button { margin: 5px; padding: 10px 15px; }
-#chart { margin-top: 20px; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Trading Web</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Real-time Broker Dashboard</h1>
+<h1>Forex Dashboard</h1>
 
 <div id="symbols">
-  <button onclick="selectSymbol('EURUSD')">EURUSD</button>
-  <button onclick="selectSymbol('GBPUSD')">GBPUSD</button>
-  <button onclick="selectSymbol('USDJPY')">USDJPY</button>
+    <!-- Buttons for symbols -->
+    <button onclick="selectSymbol('EURUSD')">EURUSD</button>
+    <button onclick="selectSymbol('GBPUSD')">GBPUSD</button>
+    <button onclick="selectSymbol('USDJPY')">USDJPY</button>
+    <button onclick="selectSymbol('AUDUSD')">AUDUSD</button>
 </div>
 
-<canvas id="chart" width="800" height="400"></canvas>
+<div id="chart"></div>
 
-<div>
-  <input type="number" id="lot" placeholder="Lot size">
-  <button onclick="trade('BUY')">BUY</button>
-  <button onclick="trade('SELL')">SELL</button>
+<div id="trade">
+    <input type="number" id="lot" placeholder="Lot size" />
+    <button onclick="executeTrade('BUY')">BUY</button>
+    <button onclick="executeTrade('SELL')">SELL</button>
 </div>
 
-<script src="app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

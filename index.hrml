@@ -1,2 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Broker Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial; padding: 20px; }
+button { margin: 5px; padding: 10px 15px; }
+#chart { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h1>Real-time Broker Dashboard</h1>
 
-my file
+<div id="symbols">
+  <button onclick="selectSymbol('EURUSD')">EURUSD</button>
+  <button onclick="selectSymbol('GBPUSD')">GBPUSD</button>
+  <button onclick="selectSymbol('USDJPY')">USDJPY</button>
+</div>
+
+<canvas id="chart" width="800" height="400"></canvas>
+
+<div>
+  <input type="number" id="lot" placeholder="Lot size">
+  <button onclick="trade('BUY')">BUY</button>
+  <button onclick="trade('SELL')">SELL</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
